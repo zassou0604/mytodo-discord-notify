@@ -1,0 +1,571 @@
+
+/* ========================================
+   全体設定
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+
+/* ========================================
+   アプリ全体
+======================================== */
+
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+header {
+  margin-bottom: 28px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+
+/* ========================================
+   共通入力欄・選択欄
+======================================== */
+
+input:not([type="checkbox"]),
+select {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  margin: 0;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 1px;
+}
+
+
+/* ========================================
+   共通ボタン
+======================================== */
+
+button {
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* ========================================
+   見出し
+======================================== */
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+
+/* ========================================
+   タスク追加
+======================================== */
+
+.todo-form {
+  width: 100%;
+  max-width: 750px;
+  margin: 24px auto 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-form h2 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.todo-form input[type="text"] {
+  width: 220px;
+}
+
+.todo-form input[type="date"] {
+  width: 115px;
+}
+
+.todo-form select {
+  width: 60px;
+}
+
+.todo-form button {
+  min-width: 50px;
+}
+
+
+/* ========================================
+   検索・絞り込み・並び替え
+======================================== */
+
+.todo-controls {
+  width: 100%;
+  max-width: 750px;
+  margin: 24px auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-controls input {
+  width: 220px;
+}
+
+.todo-controls select {
+  min-width: 110px;
+}
+
+
+/* ========================================
+   Todo一覧
+======================================== */
+
+.todo-list {
+  width: 100%;
+  max-width: 750px;
+  margin: 24px auto 0;
+}
+
+
+/* ========================================
+   Todoアイテム
+======================================== */
+
+.todo-item {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.todo-item-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.todo-item-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.todo-item-sub p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.todo-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-item-actions button {
+  margin: 0;
+}
+
+
+/* ========================================
+   タスク名
+======================================== */
+
+.todo-title {
+  font-weight: bold;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.todo-title.completed {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+
+/* ========================================
+   優先度バッジ
+======================================== */
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.priority-1 {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.priority-2 {
+  background-color: #ffedd5;
+  color: #ea580c;
+}
+
+.priority-3 {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+
+/* ========================================
+   ボタンの種類別デザイン
+======================================== */
+
+/* 追加・保存 */
+.btn-add,
+.btn-save {
+  background-color: #2563eb;
+}
+
+.btn-add:hover,
+.btn-save:hover {
+  background-color: #1d4ed8;
+}
+
+/* 編集 */
+.btn-edit {
+  background-color: #64748b;
+}
+
+.btn-edit:hover {
+  background-color: #475569;
+}
+
+/* 削除 */
+.btn-delete {
+  background-color: #dc2626;
+}
+
+.btn-delete:hover {
+  background-color: #b91c1c;
+}
+
+/* キャンセル */
+.btn-cancel {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #d1d5db;
+}
+
+
+/* ========================================
+   ダッシュボード
+======================================== */
+
+.dashboard {
+  width: 100%;
+  max-width: 750px;
+  margin: 24px auto;
+  padding: 24px;
+
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* 集計カード */
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 8px;
+
+  background-color: #f4f6f9;
+  border-radius: 10px;
+}
+
+.summary-card span {
+  color: #666;
+  font-size: 14px;
+}
+
+.summary-card strong {
+  font-size: 26px;
+}
+
+/* タスク情報 */
+
+.dashboard-section {
+  margin-top: 24px;
+}
+
+.dashboard-section h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.dashboard-section p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* 期限関連のリスト */
+
+.dashboard-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.overdue-text {
+  color: #dc2626;
+}
+
+
+/* ========================================
+   進捗バー
+======================================== */
+
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 16px 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.dashboard .progress-container {
+  max-width: none;
+  margin: 28px 0 0;
+}
+
+
+/* ========================================
+   スマートフォン対応
+======================================== */
+
+@media (max-width: 600px) {
+
+  /* アプリ全体 */
+
+  .app-container {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+
+  /* タスク追加 */
+
+  .todo-form {
+    align-items: stretch;
+  }
+
+  .todo-form input,
+  .todo-form select,
+  .todo-form button {
+    width: 100%;
+  }
+
+
+  /* 検索・絞り込み */
+
+  .todo-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-controls input,
+  .todo-controls select {
+    width: 100%;
+  }
+
+
+  /* Todoアイテム */
+
+  .todo-item {
+    padding: 12px;
+  }
+
+  .todo-item-main {
+    flex-wrap: wrap;
+  }
+
+  .todo-item-sub {
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 30px;
+}
+
+.todo-item-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+  .todo-item-actions button {
+    flex: 1;
+  }
+
+
+  /* ダッシュボード */
+
+  .dashboard {
+    padding: 16px;
+  }
+
+  .dashboard-summary {
+    gap: 8px;
+  }
+
+  .summary-card {
+    padding: 12px 4px;
+  }
+
+  .summary-card strong {
+    font-size: 22px;
+  }
+
+  .dashboard-lists {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+/* ========================================
+   ダッシュボードの色分け
+======================================== */
+
+/* 全タスク */
+.summary-card:nth-child(1) {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* 完了 */
+.summary-card:nth-child(2) {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* 未完了 */
+.summary-card:nth-child(3) {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ダッシュボード内の各セクション */
+.dashboard-section {
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 10px;
+}
+
+/* セクション見出し */
+.dashboard-section h3 {
+  color: #334155;
+}
+
+/* 期限切れ (ダッシュボード)*/
+.dashboard-section .overdue-text {
+  color: #dc2626;
+  font-weight: bold;
+}
+/* 期限切れ */
+.todo-item.overdue {
+  border-left: 5px solid #dc2626;
+  background-color: #fff7f7;
+}
+
+/* 期限が3日以内 */
+.todo-item.urgent {
+  border-left: 5px solid #f97316;
+  background-color: #fffaf5;
+}
+/* 完了済みタスク */
+.todo-item:has(.todo-title.completed) {
+  opacity: 0.6;
+}
